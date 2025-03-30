@@ -76,8 +76,8 @@ while True:
     model_response = response.text
     Q = model_response.split('?')[0].split(':')[1] + '?'
     optA = model_response.split('.')[0].split('?')[1]
-    keys = ['a','b','c','d',"correct"]
-    values = [model_response.split('.')[0].split('?')[1]]
+    keys = ['Q','a','b','c','d',"correct"]
+    values = [Q,model_response.split('.')[0].split('?')[1]]
     values.extend(model_response.split('.')[1:4])
     values.append(model_response.split(':')[2].split('.')[0])
     kv = dict(zip(keys, values))
