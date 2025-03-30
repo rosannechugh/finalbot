@@ -84,7 +84,7 @@ while True:
 
     @app.route
     def get_data():
-      return jsonify(kv)
+      return jsonify(kv),200, {"Content-Type": "application/json"};
     app.run(host = "0.0.0.0",port = 5000)
 
     if keyboard.is_pressed('q'):
